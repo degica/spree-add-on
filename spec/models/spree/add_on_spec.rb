@@ -6,6 +6,8 @@ describe Spree::AddOn do
   it { should belong_to :product }
   it { should have_one(:default_price).dependent(:destroy) }
   it { should have_many(:prices).dependent(:destroy) }
+  it { should have_many(:line_item_add_ons) }
+  it { should have_many(:line_items).through(:line_item_add_ons) }
 
   describe '#price_in' do
     let(:add_on) { create :add_on }
