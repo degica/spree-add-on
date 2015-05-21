@@ -7,8 +7,6 @@ gem "spree_auth_devise", github: "spree/spree_auth_devise", branch: '1-3-stable'
 gem 'spree', github: 'degica/spree', branch: '1-3-rebased-clean'
 
 group :development, :test do
-  gem 'fuubar'
-
   gem 'pry'
   gem 'pry-byebug'
 end
