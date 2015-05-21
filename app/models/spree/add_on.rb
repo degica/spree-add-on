@@ -3,6 +3,9 @@ class Spree::AddOn < ActiveRecord::Base
     :expiration_days
   belongs_to :product, class_name: 'Spree::Product'
 
+  has_many :line_item_add_ons
+  has_many :line_items, through: :line_item_add_ons
+
   has_one :default_price,
     class_name: 'Spree::AddOnPrice',
     conditions: {currency: Spree::Config[:currency]},
