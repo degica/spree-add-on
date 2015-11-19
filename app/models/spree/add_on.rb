@@ -1,6 +1,5 @@
 class Spree::AddOn < ActiveRecord::Base
-  attr_accessible :description, :name, :type, :default, :prices_attributes,
-    :expiration_days
+  attr_accessible :description, :name, :default, :prices_attributes, :expiration_days
   belongs_to :product, class_name: 'Spree::Product'
 
   has_many :line_item_add_ons
