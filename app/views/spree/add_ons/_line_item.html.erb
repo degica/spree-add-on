@@ -2,7 +2,7 @@
   <div class='pull-right'>
     <h5><%= Spree::AddOn.model_name.human(count: :many) %></h5>
     <% variant.product.add_ons.each do |add_on| %>
-      <div class='line-item-add-on'>
+      <div class='line-item-add-on line-item-add-on-<%= add_on.class.to_s.split('::').last %>'>
         <label class='add-on-checkbox'>
           <%= hidden_field_tag(
             "#{item_form.object_name}[add_on_ids][]",
