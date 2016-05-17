@@ -5,7 +5,7 @@
     <h3><%= add_on.name %></h3>
   </div>
   <div class="modal-body">
-    <p><%= add_on.description.html_safe %></p>
+    <p><%= add_on.description.try(:html_safe) %></p>
     <p>
       <div>
         <strong><%= I18n.t('spree.addons.cost') %>:</strong> <%= add_on.price_in(current_currency).display_amount %>
